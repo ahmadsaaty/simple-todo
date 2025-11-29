@@ -17,12 +17,23 @@ function addTask() {
   }
 }
 
-input.addEventListener("keypress", function (event) {
+inputText.addEventListener("keypress", function (event) {
   if (event.key === "Enter") {
     event.preventDefault();
     addTask();
   }
 });
+
+listContainer.addEventListener(
+  "click",
+  function (e) {
+    if (e.target.tagName === "LI") {
+      e.target.classList.toggle("checked");
+      saveData();
+    }
+  },
+  false
+);
 
 function saveData() {
   localStorage.setItem("data", listContainer.innerHTML);
