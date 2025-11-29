@@ -20,11 +20,28 @@ function addTask() {
     li.innerHTML = input.value;
     listContainer.appendChild(li);
     input.value = "";
+    saveData();
   }
 }
 
-listContainer.addEventListener("click", function (e) {
-  if (e.target.tagName === "LI") {
-    e.target.classList.toggle("checked");
-  }
-});
+listContainer.addEventListener(
+  "click",
+  function (e) {
+    if (e.target.tagName === "LI") {
+      e.target.classList.toggle("checked");
+      saveData();
+    }
+  },
+  false
+);
+
+function saveData() {
+  localStorage.setItem("data", listContainer.innerHTML);
+  console.log("saved");
+}
+
+function showData() {
+  listContainer.innerHTML = localStorage.getItem("data");
+}
+
+showData();

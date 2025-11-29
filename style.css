@@ -13,16 +13,22 @@
   flex-direction: column;
   width: auto;
   background: linear-gradient(135deg,#92aee8,#4e085f);
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 header h1 {
   font-size: xxx-large;
+  margin-bottom: 20px;
 }
 #to_do {
+  
   height: 50px;
   width: 300px;
   border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-left:20px;
 }
 #add_button {
   background-color: rgb(69, 69, 192);
@@ -51,28 +57,36 @@ header h1 {
     } */
 
 /* Style the list items */
-ul li {
+ol li {
   cursor: pointer;
   position: relative;
   padding: 12px 8px 12px 40px;
   /* background: #eee; */
   font-size: 18px;
   /* transition: 0.2s; */
+  list-style-type: none;
 }
 
 /* ul li:nth-child(odd) {
         background: #512f2f;
     } */
 
-ul li:hover {
+ol li:hover {
   background: #d97b7b;
   border-radius: 10px;
   scale: 1.1;
   transition: 0.2s;
+  
 }
 
-ul li.checked {
+ol li.checked {
   /* background: #888; */
   color: #fff;
   text-decoration: line-through;
+}
+
+.form{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
 }
